@@ -96,13 +96,6 @@ window.onload=function() {
 		};
 		EventUtil.addHandler("mousedown",control_1,handler);
 		EventUtil.addHandler("mousedown",control_2,handler);
-
-		// 时间滑块控制
-		/*
-		EventUtil.addHandler("change",dom("slider"),function(){
-			document.getElementsByClassName("time")[0].innerHTML = this.value;
-		});
-		*/
 	} else {
 		dom("container").innerHTML="对不起您使用的浏览器版本太低，无法正常访问！请使用IE10,火狐5以上浏览器";
 	}
