@@ -53,7 +53,7 @@ var dom = function(s){
 	return document.getElementById(s);
 };
 
-(function() {
+window.onload=function() {
 	var mainWidth = 0;   	//速度函数曲线图的宽度
 	var ctx;
 	var bezierOutput;		//输出的cubic-Bezier函数
@@ -156,10 +156,10 @@ var dom = function(s){
 	//生成代码
 	EventUtil.addHandler("click",dom("createCode"),function(){
 		Output = ' all ' + time.value + 's ' + bezierOutput;
-		document.getElementById("webkit_code").innerHTML = "-webkit-transition:" + Output;
-		document.getElementById("moz_code").innerHTML = "-moz-transition:" + Output;
-		document.getElementById("o_code").innerHTML = "-o-transition:" + Output;
-		document.getElementById("normal_code").innerHTML = "transition:" + Output;
+		document.getElementById("webkit_code").innerHTML = "-webkit-transition:" + Output + ";";
+		document.getElementById("moz_code").innerHTML = "-moz-transition:" + Output + ";";
+		document.getElementById("o_code").innerHTML = "-o-transition:" + Output + ";";
+		document.getElementById("normal_code").innerHTML = "transition:" + Output + ";";
 	});
 	//启动演示滑块
 	EventUtil.addHandler("click",dom("run"),function(){
@@ -180,4 +180,4 @@ var dom = function(s){
 			car_linear.style.left = "5px";
 		}
 	});
-})();
+};
