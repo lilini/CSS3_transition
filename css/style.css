@@ -1,0 +1,320 @@
+@charset "UTF-8";
+*{
+  margin:0;
+  padding:0;
+  border:0;
+  font-size: 16px;
+  font-family: "Microsoft Yahei";
+  text-decoration: none;
+  text-align: center;
+  color: #4B6F78;
+}
+
+li{
+  list-style: none;
+}
+
+body {
+  background: #353536 url("../img/bg.jpg") repeat 0 0;
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 80px;
+}
+
+h2 {
+  float: left;
+  margin-top: 8px;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+h2 #time {
+  padding-left: 24px;
+  font-size: 32px;
+}
+
+h3 {
+  margin-top: 14px;
+  padding-left: 10px;
+}
+
+#container {
+  width: 960px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#curve-creator {
+  position: relative;
+  float: left;
+  width: 300px;
+  height: 300px;
+  margin: 0 0 24px 10px;
+  background: #DDDDDD;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.bezier-control {
+  position: absolute;
+  height: 33px;
+  width: 33px;
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+#bezier-control-1 {
+  top: 209px;
+  left: 209px;
+  background: #F4574D;
+}
+
+#bezier-control-2 {
+  top: 59px;
+  left: 60px;
+  background: #84A2AA;
+}
+
+.center {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  top: 50%;
+  left: 50%;
+}
+
+.car {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 45px;
+  width: 45px;
+  background: #F4574D;
+  border-radius: 3px;
+}
+
+.car-linear {
+  background: #8aaab2;
+}
+
+button {
+  margin: 24px;
+  padding: 12px 38px;
+  background-color: #F4574D;
+  border-radius: 4px;
+  color: #4C4C4B;
+  font-size: 20px;
+  font-weight: bold;
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+button:active {
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+  background-color: #FF0000;
+}
+
+/*设置range的样式*/
+input[type=range] {
+  -webkit-appearance: none;   /* 隐藏滑块*/
+  width: 300px;  /* Firefox下所需 */
+  float: right;
+  height: 12px;
+  margin: 22px 9px 0 0;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none;  /*去掉默认边框 */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;  /* 隐藏滑块*/
+  border-color: transparent;
+  color: transparent;
+}
+
+/* 设定WebKit浏览器下range */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 30px;
+  width: 12px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px; /* 为Chrome下设定 */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+/* Firefox下 */
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 0px;
+  height: 30px;
+  width: 12px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* IE下 */
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #000000;
+  height: 30px;
+  width: 12px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #4B6F78;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #4B6F78;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #4B6F78;
+  border-radius: 1.3px;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
+
+#slider .ui-slider-handle {
+  top: -0.4em;
+  width: 24px;
+  height: 24px;
+  background-image: none;
+  background-color: #8AAAB2;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+#animation-tracks {
+  position: relative;
+}
+
+.track {
+  position: relative;
+  float: right;
+  height: 54px;
+  width: 450px;
+  margin-right: 10px;
+  background-color: #DDDDDD;
+  -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+}
+
+#output {
+  clear: both;
+  height: 55px;
+  padding: 10px 8px;
+  margin: 30px 0 0 0;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: #DDDDDD;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+}
+
+#codeOutput{
+  clear:both;
+  font: 16px/1.8 Courier;
+  color: #080;
+  border-top: solid 2px #c0c1c1;
+  padding: 25px;
+}
+
+#settings {
+  float: left;
+  width: 540px;
+  margin: 0 0 50px 100px;
+}
+
+#slider-wrapper {
+  height: 55px;
+  border-top: 2px solid #c0c1c1;
+  border-bottom: 2px solid #c0c1c1;
+}
+
+#track-bezier, #track-linear {
+  padding-bottom: 24px;
+  border-bottom: 2px solid #c0c1c1;
+  height: 70px;
+}
+
+#track-bezier h3 {
+  color: #F4574D;
+}
+
+#track-linear h3 {
+  color: #8AAAB2;
+}
+
+#footer p {
+  text-align: center;
+  margin: 1em auto;
+  font-size: 17px;
+}
+
+
+
+
